@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function val(event){
+	name=document.getElementById("tname").value;
+	pass=document.getElementById("tpass").value;
+	if(name==""){
+		document.getElementById('err1').innerHTML ="please fill username";
+		
+		event.preventDefault();
+		return false;
+	}
+	else{
+		document.getElementById('err1').innerHTML ="";
+	}
+	if(pass==""){
+		document.getElementById('err2').innerHTML ="please fill password";
+		
+		//event.preventDefault();
+		//return false;
+	}
+}
+</script>
+</head>
+<body>
+<form action='reg.jsp' onsubmit='return val(event)'>
+User : <input type='text' name='tname' id='tname'/><span id='err1'></span><br/>
+Password: <input type='password' name='tpass' id='tpass'/> <span id='err2'></span><br/>
+<input type='submit' value='login' />
+</form>
+</body>
+</html>
